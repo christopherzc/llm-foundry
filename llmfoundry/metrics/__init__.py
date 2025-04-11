@@ -14,10 +14,11 @@ from llmfoundry.eval.metrics import (
     InContextLearningMCExpectedCalibrationError,
     InContextLearningMultipleChoiceAccuracy,
 )
-from llmfoundry.metrics.token_acc import TokenAccuracy
+from llmfoundry.metrics.token_acc import TokenAccuracy, TokenAccuracyFull
 from llmfoundry.registry import metrics
 
 metrics.register('token_accuracy', func=TokenAccuracy)
+metrics.register('token_accuracy_full', func=TokenAccuracyFull)
 metrics.register('lm_accuracy', func=InContextLearningLMAccuracy)
 metrics.register(
     'lm_expected_calibration_error',
@@ -40,6 +41,7 @@ DEFAULT_CAUSAL_LM_TRAIN_METRICS = [
     'language_cross_entropy',
     'language_perplexity',
     'token_accuracy',
+    'token_accuracy_full',
 ]
 
 DEFAULT_CAUSAL_LM_EVAL_METRICS = [
