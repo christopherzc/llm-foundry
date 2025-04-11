@@ -515,6 +515,9 @@ def train(cfg: DictConfig) -> Trainer:
     name = model_config.pop('name')
     assert isinstance(name, str)
     assert isinstance(model_config, dict)
+
+    print("Model config:", model_config)
+
     model = build_composer_model(
         name=name,
         tokenizer=tokenizer,
