@@ -14,7 +14,8 @@ from llmfoundry.eval.metrics import (
     InContextLearningMCExpectedCalibrationError,
     InContextLearningMultipleChoiceAccuracy,
 )
-from llmfoundry.metrics.token_acc import TokenAccuracy, TokenAccuracyFull
+from llmfoundry.metrics.token_acc import TokenAccuracy
+from llmfoundry.metrics.token_acc_full import TokenAccuracyFull
 from llmfoundry.registry import metrics
 
 metrics.register('token_accuracy', func=TokenAccuracy)
