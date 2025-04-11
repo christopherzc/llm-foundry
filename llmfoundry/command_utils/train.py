@@ -543,7 +543,7 @@ def train(cfg: DictConfig) -> Trainer:
     try:
         if eval_loader_config is not None and not use_async_eval:
             eval_metrics = model.get_metrics(is_train=False)
-            print("Eval metrics: ", eval_metrics.items)
+            print("Eval metrics: ", eval_metrics.items())
             non_icl_metrics = [
                 metric_name for metric_name, metric in eval_metrics.items()
                 if not isinstance(metric, InContextLearningMetric)
