@@ -42,13 +42,13 @@ DEFAULT_CAUSAL_LM_TRAIN_METRICS = [
     'language_cross_entropy',
     'language_perplexity',
     'token_accuracy',
-    'token_accuracy_full',
 ]
 
 DEFAULT_CAUSAL_LM_EVAL_METRICS = [
     'language_cross_entropy',
     'language_perplexity',
     'token_accuracy',
+    'token_accuracy_full',
     'lm_accuracy',
     'lm_expected_calibration_error',
     'mc_expected_calibration_error',

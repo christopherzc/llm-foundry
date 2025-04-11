@@ -516,8 +516,6 @@ def train(cfg: DictConfig) -> Trainer:
     assert isinstance(name, str)
     assert isinstance(model_config, dict)
 
-    print("Model config:", model_config)
-
     model = build_composer_model(
         name=name,
         tokenizer=tokenizer,
@@ -546,12 +544,10 @@ def train(cfg: DictConfig) -> Trainer:
     try:
         if eval_loader_config is not None and not use_async_eval:
             eval_metrics = model.get_metrics(is_train=False)
-            print("Eval metrics: ", eval_metrics.items())
             non_icl_metrics = [
                 metric_name for metric_name, metric in eval_metrics.items()
                 if not isinstance(metric, InContextLearningMetric)
             ]
-            print("non icl metrics:", non_icl_metrics)
             evaluators = add_metrics_to_eval_loaders(
                 evaluators,
                 non_icl_metrics,
