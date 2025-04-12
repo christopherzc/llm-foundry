@@ -60,8 +60,10 @@ class TokenAccuracyFull(Metric):
 
         assert isinstance(self.correct_tokens, torch.Tensor)
         assert isinstance(self.total_tokens, torch.Tensor)
+        print("OUTPUT_TOKEN_WTSFESFE")
         print("Mask preds:", masked_preds)
         print("Mask target:", masked_target)
+        print("OUTPUT_TOKEN_WTSFESFE")
 
         # Update correct and total counts
         self.correct_tokens += torch.sum(masked_preds == masked_target)
